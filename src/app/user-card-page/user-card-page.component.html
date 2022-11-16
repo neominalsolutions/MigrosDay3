@@ -1,0 +1,51 @@
+
+<!-- her hangi bir div oluşturmaksızın template değişkenleri aşağıdaki elementere geçirmek için kullanılır. -->
+
+<button (click)="gotoUsers()">User Listesine Geri Dön</button>
+
+
+<ng-container *ngIf="user$ | async; let user">
+
+
+  <!-- aşağıdaki kullanımı yapmak yerine -->
+  <!-- <div *ngIf="user$ | async; let user">
+    <p>
+      <span>UserName</span>: {{user.username}}
+    </p>
+  </div>
+
+  <div *ngIf="user$ | async; let user">
+    <p>
+      <span>Email</span>: {{user.email}}
+    </p>
+  </div> -->
+
+  <div>
+    <p>
+      <span>UserName</span>: {{user.username}}
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <span>Email</span>: {{user.email}}
+    </p>
+  </div>
+
+
+  <div>
+    <p>
+      <span>Phone</span>: {{user.phone}}
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <span>Company</span>: {{user.company?.name}}
+    </p>
+  </div>
+
+</ng-container>
+
+
+

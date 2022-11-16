@@ -1,0 +1,31 @@
+
+<table border="1" >
+  <thead>
+    <tr>
+      <th>UserName</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Company Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of users$ | async">
+    
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user?.company?.name}}</td> 
+      <td>
+        <a [routerLink]="['/user-card',user.id]">Detail With Id</a>
+        &nbsp;&nbsp;
+        <a [routerLink]="['/user-card']" [queryParams]="{username:user.username}">Detail Querystring</a>
+      </td>
+
+      <!-- queryParams ile querystring üzerinden gönderilecek değerleri ayarlıyoruz -->
+      <!-- ? template de null değerleri template geçmez template patlatmaz ? null kontrol anlamına gelir -->
+    </tr>
+  </tbody>
+
+</table>
