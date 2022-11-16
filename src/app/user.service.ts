@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, map, Observable, retry, RetryConfig } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from './user';
 
 @Injectable({
@@ -12,11 +13,11 @@ export class UserService {
 
 
   getUser():Observable<User[]>{
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
+    return this.http.get<User[]>(environment.userApiBaseUrl);
   }
 
   getUserById(userId:number){
-    return this.http.get<User>(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    return this.http.get<User>(`${environment.userApiBaseUrl}/${userId}`);
   }
 
   // rxjs ile gelen response map operatörü ile [] formatından  {} formatına dönüştürüldü.
@@ -30,7 +31,7 @@ export class UserService {
       delay:1000
     };
 
-    return this.http.get<User>(`https://jsonplaceholder.typicode.com/users?username=${username}`).pipe(
+    return this.http.get<User>(`${environment.userApiBaseUrl}?username=${username}`).pipe(
       map((response:any) => {return response[0]}), 
       // delay(1000),
       retry(config),
