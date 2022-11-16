@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialComponentsPageComponent } from './material-components-page/material-components-page.component';
 import { PipeDemoPageComponent } from './pipe-demo-page/pipe-demo-page.component';
 import { UserCardPageComponent } from './user-card-page/user-card-page.component';
 import { UsersPageComponent } from './users-page/users-page.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path:'pipes-demo',
     component:PipeDemoPageComponent
+  },
+  {
+    path:'material-demo',
+    component:MaterialComponentsPageComponent
   }
 ];
 
