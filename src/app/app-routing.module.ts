@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PipeDemoPageComponent } from './pipe-demo-page/pipe-demo-page.component';
 import { UserCardPageComponent } from './user-card-page/user-card-page.component';
 import { UsersPageComponent } from './users-page/users-page.component';
 
@@ -17,6 +18,10 @@ const routes: Routes = [
     // query String örneği
     path:'user-card', // dışardan id parametresi gelecek
     component:UserCardPageComponent
+  },
+  {
+    path:'pipes-demo',
+    component:PipeDemoPageComponent
   }
 ];
 

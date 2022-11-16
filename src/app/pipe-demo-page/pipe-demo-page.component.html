@@ -1,0 +1,33 @@
+<!-- Angularda built-in pipelar currencyPipe, upperCasePipe, lowerCasePipe, date, decimalPipe, percentPipe -->
+
+<!-- properyler üzerinden html template tarafta transform işlemi yaparız. -->
+<p>
+  Order Customer: {{order.customerFirstName}} {{order.customerLastName | uppercase}}
+</p>
+
+<p>
+  Order Date: {{order.orderDate | date:'dd/MM/yyyy'}} 
+</p>
+
+
+<p>
+  Order Total: {{order.orderTotal | currency:'EUR'}} 
+</p>
+
+<p>
+  Order Company: {{order.shipCompany | lowercase}} 
+</p>
+
+
+<p orderBgColor [status]="order.orderStatus">
+  Order Status: {{order.orderStatus| orderStatus}} 
+</p>
+
+
+<hr>
+
+<!-- Senaryo OrderStatus diye bir alanın ekranda görüntülenmesini pipe ile yapalım. OrderStatusPipe (Ordered=1,ReadyForShipment=2,Shipped=3,Invoiced=4) -->
+
+<!-- UI Elementi orderStatus pipe göre farklı backgroun color sahip olsun orderStatus directive -->
+
+<!-- Directive htmş elementlerine uygulanan elemente yeni bir özellik kazandıran yapılardır.  *ngFor,*ngIf -->
