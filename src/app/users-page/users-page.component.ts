@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { User } from '../user';
 import { UserService } from '../user.service';
@@ -12,9 +13,11 @@ export class UsersPageComponent implements OnInit {
 
   users$!:Observable<User[]>;
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private titleService:Title) { }
 
   ngOnInit(): void {
+
+    this.titleService.setTitle('UserPage');
 
     this.users$ = this.userService.getUser();
 
