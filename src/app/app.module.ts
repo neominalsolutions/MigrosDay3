@@ -19,6 +19,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { NgxBsComponentsPageComponent } from './ngx-bs-components-page/ngx-bs-components-page.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 // Component dışında Pipes da declarationa ekleniyor.
 // Component dışında directive de declarationa ekleniyor
 
@@ -32,7 +36,8 @@ import {MatSortModule} from '@angular/material/sort';
     PipeDemoPageComponent,
     OrderStatusPipe,
     OrderBgColorDirective,
-    MaterialComponentsPageComponent 
+    MaterialComponentsPageComponent,
+    NgxBsComponentsPageComponent 
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,10 @@ import {MatSortModule} from '@angular/material/sort';
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    AlertModule.forRoot(),
+    AccordionModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

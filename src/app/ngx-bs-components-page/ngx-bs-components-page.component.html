@@ -1,0 +1,57 @@
+
+<hr>
+
+<alert type="success">
+  <strong>Well done!</strong> You successfully read this important alert message.
+</alert>
+<alert type="info">
+  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+</alert>
+<alert type="warning">
+  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</alert>
+<alert type="danger">
+  <strong>Oh snap!</strong> Change a few things up and try submitting again.
+</alert>
+
+<hr>
+
+
+<accordion>
+  <accordion-group heading="Static Header">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+</accordion>
+
+
+
+<div class="row">
+  <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+    
+
+
+    <input type="text"
+           placeholder="Datepicker"
+           class="form-control"
+           [minDate]="minDate"
+           [maxDate]="maxDate"
+           [bsValue]="today"
+           [bsConfig]="{ containerClass: 'theme-orange', showClearButton: true, clearPosition: 'right' }"
+           bsDatepicker (bsValueChange)="onChange($event)">
+  </div>
+  <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+    <input type="text"
+           placeholder="Daterangepicker"
+           class="form-control"
+           bsDaterangepicker>
+  </div>
+</div>
